@@ -1,4 +1,4 @@
-package com.personal.bulletinboardsystem.user;
+package com.personal.bulletinboardsystem.exception;
 
 public class ExistsEmailException extends RuntimeException{
     public ExistsEmailException(String s) {
