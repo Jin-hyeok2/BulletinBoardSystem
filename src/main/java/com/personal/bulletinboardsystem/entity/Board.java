@@ -2,6 +2,7 @@ package com.personal.bulletinboardsystem.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -18,25 +19,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@Entity
 @EntityListeners(AuditingEntityListener.class)
-public class User {
+public class Board {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    private String email;
-    private String name;
-    private String phone;
-    private String password;
+    private Long user_id;
+    private String title;
+    @Column(columnDefinition = "TEXT")
+    private String content;
 
     @CreatedDate
-    private LocalDateTime created_at;
+    private LocalDateTime craeted_at;
     @LastModifiedDate
     private LocalDateTime updated_at;
 }
