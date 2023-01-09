@@ -1,4 +1,4 @@
-package com.personal.bulletinboardsystem.user.model;
+package com.personal.bulletinboardsystem.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserInput {
+public class UserSignup {
     @Email(message = "이메일 형식에 맞게 입력해 주세요.")
     @NotBlank(message = "이메일은 필수 항목입니다.")
     private String email;

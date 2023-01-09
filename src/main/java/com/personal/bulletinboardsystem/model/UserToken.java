@@ -1,4 +1,4 @@
-package com.personal.bulletinboardsystem.user.model;
+package com.personal.bulletinboardsystem.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

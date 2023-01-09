@@ -1,4 +1,4 @@
-package com.personal.bulletinboardsystem;
+package com.personal.bulletinboardsystem.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
