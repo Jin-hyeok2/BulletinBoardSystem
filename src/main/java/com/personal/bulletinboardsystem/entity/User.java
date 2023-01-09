@@ -1,8 +1,7 @@
-package com.personal.bulletinboardsystem.user.entity;
+package com.personal.bulletinboardsystem.entity;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,13 +24,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
     private String email;
-    @Column
     private String name;
-    @Column
     private String phone;
-    @Column
     private String password;
 
     private LocalDateTime created_at;
