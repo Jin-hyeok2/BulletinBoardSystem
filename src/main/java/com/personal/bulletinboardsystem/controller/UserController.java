@@ -1,6 +1,5 @@
 package com.personal.bulletinboardsystem.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.personal.bulletinboardsystem.exception.ExistsEmailException;
-import com.personal.bulletinboardsystem.model.UserSignup;
 import com.personal.bulletinboardsystem.model.UserLogin;
+import com.personal.bulletinboardsystem.model.UserSignup;
 import com.personal.bulletinboardsystem.model.UserToken;
 import com.personal.bulletinboardsystem.service.UserService;
 
@@ -42,9 +41,9 @@ public class UserController {
     }
 
     @PatchMapping("/signin")
-    public ResponseEntity<?> refreshToken(HttpServletRequest request) {
+    public ResponseEntity<?> refreshToken(@RequestHeader("F-TOKEN") String token) {
 
-        String newToken = userService.refreshToken(request.getHeader("F-TOKEN"));
+        String newToken = userService.refreshToken(token);
 
         return ResponseEntity.ok(UserToken.builder()
                 .token(newToken).build());

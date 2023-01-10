@@ -45,8 +45,6 @@ public class UserService {
                 .name(userInput.getName())
                 .password(encryptPassword)
                 .phone(userInput.getPhone())
-                .created_at(LocalDateTime.now())
-                .updated_at(LocalDateTime.now())
                 .build());
 
         return true;
@@ -74,12 +72,7 @@ public class UserService {
     }
 
     public String refreshToken(String token) {
-        System.out.println("======================= token 정보 =======================");
-        System.out.println(token);
         String email = JWTUtils.getSubject(token, jwtSecret);
-
-        System.out.println("======================= email 정보 =======================");
-        System.out.println(email);
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UserNotFoundException("사용자 정보가 없습니다."));

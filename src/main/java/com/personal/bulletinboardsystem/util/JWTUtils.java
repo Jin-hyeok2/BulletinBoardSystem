@@ -9,8 +9,15 @@ import lombok.experimental.UtilityClass;
 public class JWTUtils {
     public String getSubject(String token, String jwtSecret) {
         return JWT.require(Algorithm.HMAC512(jwtSecret))
-        .build()
-        .verify(token)
-        .getSubject();
+                .build()
+                .verify(token)
+                .getSubject();
+    }
+
+    public long getUserId(String token, String jwtSecret) {
+        return JWT.require(Algorithm.HMAC512(jwtSecret))
+                .build()
+                .verify(token)
+                .getClaim("user_id").asLong();
     }
 }
