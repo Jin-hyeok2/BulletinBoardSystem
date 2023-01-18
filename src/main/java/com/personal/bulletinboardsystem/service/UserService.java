@@ -98,4 +98,8 @@ public class UserService {
 
         return email;
     }
+
+    public String getUserEmail(Long userId) {
+        return userRepository.findById(userId).orElseThrow().getEmail();
+    }
 }
