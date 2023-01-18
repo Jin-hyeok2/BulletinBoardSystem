@@ -32,13 +32,13 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long user_id;
+    private Long userId;
     private String title;
     @Column(columnDefinition = "TEXT")
     private String content;
 
     @CreatedDate
-    private LocalDateTime craeted_at;
+    private LocalDateTime createdAt;
     @LastModifiedDate
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 }
